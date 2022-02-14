@@ -13,7 +13,7 @@ namespace ProgrammingLabs
             int NumberToMultiply = Convert.ToInt32(Console.ReadLine());
             int TimesToMultiply = Convert.ToInt32(Console.ReadLine());
             int BufferNumber = NumberToMultiply;
-            for (int iterator = 1; iterator < TimesToMultiply; ++iterator)
+            for (int Iterator = 1; Iterator < TimesToMultiply; ++Iterator)
             {
                 NumberToMultiply *= BufferNumber;
             }
