@@ -26,17 +26,49 @@ namespace ProgrammingLabs
             return $"{_Name}, {_Author}, {_Tags}, {_Genre}, {_Location}";
         }
     }
-    /*
-        class MSWord : Document
-        {
+    
+    class MSWord : Document
+    {
+        private string _Codepage;
 
+        public MSWord(
+            string Name,
+            string Author,
+            string Tags,
+            string Genre,
+            string Location,
+            string Codepage) : base(Name, Author, Tags, Genre, Location)
+        {
+            _Codepage = Codepage;
         }
 
-        class PDF : Document
+        public override string GetInfo()
         {
-
+            return base.GetInfo() + $", {_Codepage}";
         }
-    */
+
+    }
+
+    class PDF : Document
+    {
+        private int _Dpi;
+
+        public PDF(int Dpi,
+                   string Name,
+                   string Author,
+                   string Tags,
+                   string Genre,
+                   string Location) : base(Name, Author, Tags, Genre, Location)
+        {
+            _Dpi = Dpi;
+        }
+
+        public override string GetInfo()
+        {
+            return base.GetInfo() + $", {_Dpi}";
+        }
+    }
+    
     class MSExcel : Document
     {
         private int _ColumnsCount;
