@@ -14,7 +14,7 @@ namespace ProgrammingLabs
         public DeepStructure DS;
         public SquareMatrix()
         {
-             _Matrix = new int[3,3];
+            _Matrix = new int[3,3];
             DS = new DeepStructure();
         }
 

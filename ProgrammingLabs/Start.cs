@@ -12,10 +12,10 @@ namespace ProgrammingLabs
             SquareMatrix Matrix2 = new SquareMatrix();
             Matrix2.FillRandom();
 
-            float result = Matrix1 * Matrix2;
-            Console.WriteLine(result);
-            result = Matrix1 - Matrix2;
-            Console.WriteLine(result);
+            float Result = Matrix1 * Matrix2;
+            Console.WriteLine(Result);
+            Result = Matrix1 - Matrix2;
+            Console.WriteLine(Result);
 
             ShallowCloneMatrix ClonedMatrix = new ShallowCloneMatrix();
             ClonedMatrix._Determinant = 2;
@@ -23,7 +23,6 @@ namespace ProgrammingLabs
             ClonedMatrix._Determinant = 1;
             Console.WriteLine(ClonedMatrix._Determinant);
             Console.WriteLine(ClonedMatrix2._Determinant);
-
         }
     }
 }
