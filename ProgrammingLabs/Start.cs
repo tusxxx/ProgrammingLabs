@@ -14,14 +14,15 @@ namespace ProgrammingLabs
 
             float result = Matrix1 * Matrix2;
             Console.WriteLine(result);
-
-            Caretaker Caretaker1 = new Caretaker();
-            Caretaker1.SaveState(Matrix1);
-            
-
-            result = Matrix1 * Matrix2;
+            result = Matrix1 - Matrix2;
             Console.WriteLine(result);
 
+            ShallowCloneMatrix ClonedMatrix = new ShallowCloneMatrix();
+            ClonedMatrix._Determinant = 2;
+            ShallowCloneMatrix ClonedMatrix2 = (ShallowCloneMatrix)ClonedMatrix.Clone();
+            ClonedMatrix._Determinant = 1;
+            Console.WriteLine(ClonedMatrix._Determinant);
+            Console.WriteLine(ClonedMatrix2._Determinant);
 
         }
     }
