@@ -6,13 +6,16 @@ using System.Threading.Tasks;
 
 namespace ProgrammingLabs
 {
-    class SquareMatrix: IComparable, IOriginator
+    class SquareMatrix: IComparable
     {
+        public int X;
         private int[,] _Matrix;
         public float _Determinant = new Random().Next(1, 10);
+        public DeepStructure DS;
         public SquareMatrix()
         {
-             _Matrix = new int[3,3];
+            _Matrix = new int[3,3];
+            DS = new DeepStructure();
         }
 
         public void FillRandom()
@@ -109,45 +112,18 @@ namespace ProgrammingLabs
         {
             return base.ToString();
         }
-
-        public object GetMemento()
-        {
-            return new Memento { _Matrix = this._Matrix };
-        }
-
-        public void SetMemento(object Memento)
-        {
-            if (Memento is Memento)
-            {
-                var Mem = Memento as Memento;
-                _Matrix = Mem._Matrix;
-            }
-        }
     }
 
-    class Memento
+    class ShallowCloneMatrix : SquareMatrix, ICloneable
     {
-        public int[,] _Matrix { get; set; }
-    }
-
-    public interface IOriginator
-    {
-        object GetMemento();
-        void SetMemento(object memento);
-    }
-
-    public class Caretaker
-    {
-        private object Memento;
-        public void SaveState(IOriginator originator)
+        public object Clone()
         {
-            Memento = originator.GetMemento();
-        }
-
-        public void RestoreState(IOriginator originator)
-        {
-            originator.SetMemento(Memento);
+            return (SquareMatrix)this.MemberwiseClone();
         }
     }
 
+    class DeepStructure
+    {
+        public int A { get; set; }
+    }
 }
