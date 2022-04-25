@@ -13,7 +13,9 @@ namespace ProgrammingLabs
             string FirstNumber = Console.ReadLine();
             char CharToMove;
             CharToMove = FirstNumber[1];
-            FirstNumber = FirstNumber.Remove(1, 1);
+            int StartIndexToRemove = 1;
+            int HowManyCharsToRemove = 1;
+            FirstNumber = FirstNumber.Remove(StartIndexToRemove, HowManyCharsToRemove);
             FirstNumber = FirstNumber.Insert(FirstNumber.Length, CharToMove.ToString());
             return FirstNumber;
         }
